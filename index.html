@@ -60,21 +60,27 @@
 <!-- ────────────  ACT I · HERO  ──────────── -->
 <section class="hero" id="hero">
 
-  <!-- ambient circle (animated by JS) -->
+  <!-- ambient red circle: grows on scroll, mix-blend with text -->
   <div class="hero__circle" aria-hidden="true"></div>
 
-  <!-- vertical TED label, editorial detail -->
+  <!-- identity scatter: speaker faces, subtle -->
+  <div class="hero__faces" aria-hidden="true">
+    <img class="hero__face hero__face--a" src="assets/photos/Foto3.png" alt="" loading="eager" />
+    <img class="hero__face hero__face--b" src="assets/photos/Foto7.png" alt="" loading="eager" />
+  </div>
+
+  <!-- vertical TED label, editorial detail (desktop only) -->
   <div class="hero__rail" aria-hidden="true">
     <span>2026 · COHORTE 01</span>
   </div>
 
-  <!-- top-left meta -->
+  <!-- top-left meta (desktop only) -->
   <div class="hero__meta hero__meta--tl" aria-hidden="true">
     <span class="dot"></span>
     <span>EN VIVO · Postulaciones abiertas</span>
   </div>
 
-  <!-- top-right meta -->
+  <!-- top-right meta (desktop only) -->
   <div class="hero__meta hero__meta--tr" aria-hidden="true">
     <span>Buenos Aires</span>
     <span class="bar"></span>
@@ -116,137 +122,50 @@
 
 </section>
 
-<!-- ────────────  ACT II · MANIFIESTO (pinned horizontal)  ──────────── -->
+<!-- ────────────  ACT II · MANIFIESTO (3 panels)  ──────────── -->
 <section class="manifesto" id="manifiesto" aria-label="Manifiesto">
   <div class="manifesto__pin">
     <div class="manifesto__track">
 
       <div class="manifesto__panel" data-panel="0">
-        <p class="manifesto__index">01 / 06</p>
+        <p class="manifesto__index">01 / 03</p>
         <h2 class="manifesto__line"><span>Una</span> <strong>idea.</strong></h2>
       </div>
 
       <div class="manifesto__panel" data-panel="1">
-        <p class="manifesto__index">02 / 06</p>
+        <p class="manifesto__index">02 / 03</p>
         <h2 class="manifesto__line">Puede empezar una <strong>conversación.</strong></h2>
       </div>
 
-      <div class="manifesto__panel" data-panel="2">
-        <p class="manifesto__index">03 / 06</p>
+      <div class="manifesto__panel manifesto__panel--final" data-panel="2">
+        <p class="manifesto__index">03 / 03</p>
         <h2 class="manifesto__line">Puede cambiar un <strong>aula.</strong></h2>
-      </div>
-
-      <div class="manifesto__panel" data-panel="3">
-        <p class="manifesto__index">04 / 06</p>
-        <h2 class="manifesto__line">Puede mover una <strong>comunidad.</strong></h2>
-      </div>
-
-      <div class="manifesto__panel" data-panel="4">
-        <p class="manifesto__index">05 / 06</p>
-        <h2 class="manifesto__line">Puede llegar al <strong>mundo.</strong></h2>
-      </div>
-
-      <div class="manifesto__panel manifesto__panel--final" data-panel="5">
-        <p class="manifesto__index">06 / 06</p>
-        <h2 class="manifesto__line manifesto__line--small">
-          Y todo empieza con vos<br />
-          diciéndola <strong>en voz alta.</strong>
-        </h2>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- ────────────  ACT III · PARA QUIÉN  ──────────── -->
-<section class="para-quien" id="programa">
-
-  <div class="section__head">
-    <p class="section__kicker">— Para quién es</p>
-    <h2 class="section__title">Esto es para vos si…</h2>
-  </div>
-
-  <ul class="para-quien__list">
-    <li class="para-quien__item">
-      <span class="para-quien__num">01</span>
-      <p>Sos estudiante de <strong>secundaria.</strong></p>
-    </li>
-    <li class="para-quien__item">
-      <span class="para-quien__num">02</span>
-      <p>Tenés una pregunta que <strong>no te deja dormir.</strong></p>
-    </li>
-    <li class="para-quien__item">
-      <span class="para-quien__num">03</span>
-      <p>Querés que tu voz <strong>se escuche.</strong></p>
-    </li>
-    <li class="para-quien__item">
-      <span class="para-quien__num">04</span>
-      <p>No necesitás experiencia previa. <strong>Solo ganas.</strong></p>
-    </li>
-  </ul>
-
-  <p class="para-quien__note">
-    Programa orientado a jóvenes de la comunidad judía.
-    ¿No sabés si calificás? Escribinos a
-    <a href="mailto:contacto@tedbeneitikva.org">contacto@tedbeneitikva.org</a>
-    y lo averiguamos juntos.
-  </p>
-</section>
-
-<!-- ────────────  ACT III.b · QUÉ VAS A APRENDER  ──────────── -->
-<section class="learn">
-
-  <div class="section__head">
-    <p class="section__kicker">— Qué vas a aprender</p>
-    <h2 class="section__title">Ocho herramientas <em>que no se enseñan</em> en la escuela.</h2>
-  </div>
-
-  <div class="learn__grid">
-    <article class="learn__card">
-      <span class="learn__num">01</span>
-      <h3>Oratoria</h3>
-      <p>Hablar con presencia, sin perder autenticidad.</p>
-    </article>
-    <article class="learn__card">
-      <span class="learn__num">02</span>
-      <h3>Storytelling</h3>
-      <p>Convertir una idea en una historia que se recuerda.</p>
-    </article>
-    <article class="learn__card">
-      <span class="learn__num">03</span>
-      <h3>Pensamiento crítico</h3>
-      <p>Cuestionar antes de afirmar.</p>
-    </article>
-    <article class="learn__card">
-      <span class="learn__num">04</span>
-      <h3>Liderazgo</h3>
-      <p>Inspirar sin imponer.</p>
-    </article>
-    <article class="learn__card">
-      <span class="learn__num">05</span>
-      <h3>Desarrollo de ideas</h3>
-      <p>De la intuición al concepto sólido.</p>
-    </article>
-    <article class="learn__card">
-      <span class="learn__num">06</span>
-      <h3>Comunicación</h3>
-      <p>Decir más con menos.</p>
-    </article>
-    <article class="learn__card">
-      <span class="learn__num">07</span>
-      <h3>Presentaciones</h3>
-      <p>Diseñar momentos, no slides.</p>
-    </article>
-    <article class="learn__card">
-      <span class="learn__num">08</span>
-      <h3>Confianza escénica</h3>
-      <p>Que los nervios trabajen para vos.</p>
-    </article>
+<!-- ────────────  IDENTITY STRIP · caras dispersas  ──────────── -->
+<section class="identity" aria-label="Identidad TED-Ed">
+  <div class="identity__inner">
+    <figure class="identity__face">
+      <img src="assets/photos/Foto1.png" alt="Joven speaker TED-Ed" loading="lazy" />
+    </figure>
+    <p class="identity__quote">
+      Caras reales. Voces reales. <em>Esta es la familia TED‑Ed.</em>
+    </p>
+    <figure class="identity__face identity__face--alt">
+      <img src="assets/photos/Foto5.png" alt="Joven speaker TED-Ed" loading="lazy" />
+    </figure>
+    <figure class="identity__face">
+      <img src="assets/photos/Foto8.png" alt="Joven speaker TED-Ed" loading="lazy" />
+    </figure>
   </div>
 </section>
 
-<!-- ────────────  ACT IV · CÓMO FUNCIONA (timeline)  ──────────── -->
-<section class="timeline" id="como-funciona">
+<!-- ────────────  ACT III · CÓMO FUNCIONA (timeline)  ──────────── -->
+<section class="timeline" id="programa">
 
   <div class="section__head">
     <p class="section__kicker">— Cómo funciona</p>
@@ -291,56 +210,11 @@
   </div>
 </section>
 
-<!-- ────────────  GALERÍA · SPEAKERS  ──────────── -->
-<section class="gallery" id="speakers">
-
-  <div class="section__head">
-    <p class="section__kicker">— Speakers</p>
-    <h2 class="section__title">2026 es el <em>primer año.</em><br />Estas son las caras del movimiento <strong>TED‑Ed.</strong></h2>
-  </div>
-
-  <div class="gallery__strip" id="galleryStrip">
-    <figure class="gallery__item">
-      <img src="assets/photos/Foto1.png" alt="Joven speaker TED-Ed Argentina" loading="lazy" />
-      <figcaption>¿Qué dirías si supieras que <em>te están escuchando?</em></figcaption>
-    </figure>
-    <figure class="gallery__item">
-      <img src="assets/photos/Foto5.png" alt="Speaker TED-Ed Argentina dando charla" loading="lazy" />
-      <figcaption>¿Qué idea tenés <em>guardada hace meses?</em></figcaption>
-    </figure>
-    <figure class="gallery__item">
-      <img src="assets/photos/Foto3.png" alt="Joven speaker TED-Ed Argentina" loading="lazy" />
-      <figcaption>¿Cuál es la conversación <em>que evitás tener?</em></figcaption>
-    </figure>
-    <figure class="gallery__item">
-      <img src="assets/photos/Foto2.png" alt="Joven speaker TED-Ed Argentina" loading="lazy" />
-      <figcaption>¿Qué pasaría si <em>te dieran 8 minutos?</em></figcaption>
-    </figure>
-    <figure class="gallery__item">
-      <img src="assets/photos/Foto7.png" alt="Joven speaker TED-Ed Argentina" loading="lazy" />
-      <figcaption>¿De qué <em>te animarías a hablar?</em></figcaption>
-    </figure>
-    <figure class="gallery__item">
-      <img src="assets/photos/Foto4.png" alt="Joven speaker TED-Ed Argentina" loading="lazy" />
-      <figcaption>¿Qué historia <em>solo vos podés contar?</em></figcaption>
-    </figure>
-    <figure class="gallery__item">
-      <img src="assets/photos/Foto6.png" alt="Joven speaker TED-Ed Argentina" loading="lazy" />
-      <figcaption>¿A quién le hablarías <em>si pudieras elegir?</em></figcaption>
-    </figure>
-    <figure class="gallery__item">
-      <img src="assets/photos/Foto8.png" alt="Joven speaker TED-Ed Argentina" loading="lazy" />
-      <figcaption>¿Y si la próxima sos <em>vos?</em></figcaption>
-    </figure>
-  </div>
-
-  <p class="gallery__note">
-    Fotos del programa Clubes TED‑Ed Argentina. <span>Pronto, las nuestras.</span>
-  </p>
-</section>
-
-<!-- ────────────  FAQ  ──────────── -->
+<!-- ────────────  FAQ (hand toggles)  ──────────── -->
 <section class="faq" id="faq">
+
+  <!-- identity accent: subtle speaker face -->
+  <img class="faq__face" src="assets/photos/Foto2.png" alt="" aria-hidden="true" loading="lazy" />
 
   <div class="section__head">
     <p class="section__kicker">— FAQ</p>
@@ -350,42 +224,121 @@
   <div class="faq__list">
 
     <details class="faq__item">
-      <summary>¿Necesito experiencia previa en oratoria?</summary>
+      <summary>
+        <span class="faq__q">¿Para quién es?</span>
+        <span class="faq__hand" aria-hidden="true">
+          <svg class="faq__hand-icon faq__hand-icon--closed" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 13v-2a2 2 0 1 1 4 0v2"/>
+            <path d="M11 13V9a2 2 0 1 1 4 0v4"/>
+            <path d="M15 13v-2a2 2 0 1 1 4 0v5a5 5 0 0 1-5 5h-2a5 5 0 0 1-5-5v-3a2 2 0 1 1 4 0"/>
+          </svg>
+          <svg class="faq__hand-icon faq__hand-icon--open" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 11V5a2 2 0 0 1 4 0v6"/>
+            <path d="M13 11V3a2 2 0 0 1 4 0v8"/>
+            <path d="M5 11V7a2 2 0 0 1 4 0v4"/>
+            <path d="M17 11V8a2 2 0 0 1 4 0v6a7 7 0 0 1-7 7h-1a7 7 0 0 1-7-7v-3"/>
+          </svg>
+        </span>
+      </summary>
+      <p>Para estudiantes de <strong>secundaria</strong> de la comunidad judía. No necesitás experiencia previa, solo ganas. Si tenés una pregunta que no te deja dormir y querés que tu voz se escuche, esto es para vos. ¿Dudas? Escribinos a <a href="mailto:contacto@tedbeneitikva.org">contacto@tedbeneitikva.org</a>.</p>
+    </details>
+
+    <details class="faq__item">
+      <summary>
+        <span class="faq__q">¿Cuánto tarda la postulación?</span>
+        <span class="faq__hand" aria-hidden="true">
+          <svg class="faq__hand-icon faq__hand-icon--closed" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 13v-2a2 2 0 1 1 4 0v2"/><path d="M11 13V9a2 2 0 1 1 4 0v4"/><path d="M15 13v-2a2 2 0 1 1 4 0v5a5 5 0 0 1-5 5h-2a5 5 0 0 1-5-5v-3a2 2 0 1 1 4 0"/></svg>
+          <svg class="faq__hand-icon faq__hand-icon--open" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11V5a2 2 0 0 1 4 0v6"/><path d="M13 11V3a2 2 0 0 1 4 0v8"/><path d="M5 11V7a2 2 0 0 1 4 0v4"/><path d="M17 11V8a2 2 0 0 1 4 0v6a7 7 0 0 1-7 7h-1a7 7 0 0 1-7-7v-3"/></svg>
+        </span>
+      </summary>
+      <p>Tres minutos. Lo importante no es lo que pongas en el formulario, es animarte.</p>
+    </details>
+
+    <details class="faq__item">
+      <summary>
+        <span class="faq__q">¿Necesito experiencia previa en oratoria?</span>
+        <span class="faq__hand" aria-hidden="true">
+          <svg class="faq__hand-icon faq__hand-icon--closed" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 13v-2a2 2 0 1 1 4 0v2"/><path d="M11 13V9a2 2 0 1 1 4 0v4"/><path d="M15 13v-2a2 2 0 1 1 4 0v5a5 5 0 0 1-5 5h-2a5 5 0 0 1-5-5v-3a2 2 0 1 1 4 0"/></svg>
+          <svg class="faq__hand-icon faq__hand-icon--open" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11V5a2 2 0 0 1 4 0v6"/><path d="M13 11V3a2 2 0 0 1 4 0v8"/><path d="M5 11V7a2 2 0 0 1 4 0v4"/><path d="M17 11V8a2 2 0 0 1 4 0v6a7 7 0 0 1-7 7h-1a7 7 0 0 1-7-7v-3"/></svg>
+        </span>
+      </summary>
       <p>No. Lo único indispensable es que tengas ganas de decir algo. El resto lo construimos juntos en las diez semanas.</p>
     </details>
 
     <details class="faq__item">
-      <summary>¿Tiene costo?</summary>
+      <summary>
+        <span class="faq__q">¿Tiene costo?</span>
+        <span class="faq__hand" aria-hidden="true">
+          <svg class="faq__hand-icon faq__hand-icon--closed" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 13v-2a2 2 0 1 1 4 0v2"/><path d="M11 13V9a2 2 0 1 1 4 0v4"/><path d="M15 13v-2a2 2 0 1 1 4 0v5a5 5 0 0 1-5 5h-2a5 5 0 0 1-5-5v-3a2 2 0 1 1 4 0"/></svg>
+          <svg class="faq__hand-icon faq__hand-icon--open" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11V5a2 2 0 0 1 4 0v6"/><path d="M13 11V3a2 2 0 0 1 4 0v8"/><path d="M5 11V7a2 2 0 0 1 4 0v4"/><path d="M17 11V8a2 2 0 0 1 4 0v6a7 7 0 0 1-7 7h-1a7 7 0 0 1-7-7v-3"/></svg>
+        </span>
+      </summary>
       <p>Es gratis. El Club existe gracias a Benei Tikva y a las organizaciones aliadas.</p>
     </details>
 
     <details class="faq__item">
-      <summary>¿Cuánto dura el programa?</summary>
+      <summary>
+        <span class="faq__q">¿Cuánto dura el programa?</span>
+        <span class="faq__hand" aria-hidden="true">
+          <svg class="faq__hand-icon faq__hand-icon--closed" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 13v-2a2 2 0 1 1 4 0v2"/><path d="M11 13V9a2 2 0 1 1 4 0v4"/><path d="M15 13v-2a2 2 0 1 1 4 0v5a5 5 0 0 1-5 5h-2a5 5 0 0 1-5-5v-3a2 2 0 1 1 4 0"/></svg>
+          <svg class="faq__hand-icon faq__hand-icon--open" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11V5a2 2 0 0 1 4 0v6"/><path d="M13 11V3a2 2 0 0 1 4 0v8"/><path d="M5 11V7a2 2 0 0 1 4 0v4"/><path d="M17 11V8a2 2 0 0 1 4 0v6a7 7 0 0 1-7 7h-1a7 7 0 0 1-7-7v-3"/></svg>
+        </span>
+      </summary>
       <p>Diez semanas. Un encuentro por semana. La última semana cerrás con tu charla TED frente a público real.</p>
     </details>
 
     <details class="faq__item">
-      <summary>¿Qué pasa al final?</summary>
+      <summary>
+        <span class="faq__q">¿Qué pasa al final?</span>
+        <span class="faq__hand" aria-hidden="true">
+          <svg class="faq__hand-icon faq__hand-icon--closed" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 13v-2a2 2 0 1 1 4 0v2"/><path d="M11 13V9a2 2 0 1 1 4 0v4"/><path d="M15 13v-2a2 2 0 1 1 4 0v5a5 5 0 0 1-5 5h-2a5 5 0 0 1-5-5v-3a2 2 0 1 1 4 0"/></svg>
+          <svg class="faq__hand-icon faq__hand-icon--open" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11V5a2 2 0 0 1 4 0v6"/><path d="M13 11V3a2 2 0 0 1 4 0v8"/><path d="M5 11V7a2 2 0 0 1 4 0v4"/><path d="M17 11V8a2 2 0 0 1 4 0v6a7 7 0 0 1-7 7h-1a7 7 0 0 1-7-7v-3"/></svg>
+        </span>
+      </summary>
       <p>Das tu charla TED. Iluminación, escenario, círculo rojo. Las charlas se filman y quedan publicadas para que las puedas compartir.</p>
     </details>
 
     <details class="faq__item">
-      <summary>¿Puedo anotarme con amigos?</summary>
+      <summary>
+        <span class="faq__q">¿Puedo anotarme con amigos?</span>
+        <span class="faq__hand" aria-hidden="true">
+          <svg class="faq__hand-icon faq__hand-icon--closed" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 13v-2a2 2 0 1 1 4 0v2"/><path d="M11 13V9a2 2 0 1 1 4 0v4"/><path d="M15 13v-2a2 2 0 1 1 4 0v5a5 5 0 0 1-5 5h-2a5 5 0 0 1-5-5v-3a2 2 0 1 1 4 0"/></svg>
+          <svg class="faq__hand-icon faq__hand-icon--open" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11V5a2 2 0 0 1 4 0v6"/><path d="M13 11V3a2 2 0 0 1 4 0v8"/><path d="M5 11V7a2 2 0 0 1 4 0v4"/><path d="M17 11V8a2 2 0 0 1 4 0v6a7 7 0 0 1-7 7h-1a7 7 0 0 1-7-7v-3"/></svg>
+        </span>
+      </summary>
       <p>100%. La cohorte funciona mejor cuando hay química entre los participantes. Anotate con quien quieras.</p>
     </details>
 
     <details class="faq__item">
-      <summary>¿Qué pasa si no estoy seguro de si soy judío?</summary>
+      <summary>
+        <span class="faq__q">¿Qué pasa si no estoy seguro de si soy judío?</span>
+        <span class="faq__hand" aria-hidden="true">
+          <svg class="faq__hand-icon faq__hand-icon--closed" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 13v-2a2 2 0 1 1 4 0v2"/><path d="M11 13V9a2 2 0 1 1 4 0v4"/><path d="M15 13v-2a2 2 0 1 1 4 0v5a5 5 0 0 1-5 5h-2a5 5 0 0 1-5-5v-3a2 2 0 1 1 4 0"/></svg>
+          <svg class="faq__hand-icon faq__hand-icon--open" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11V5a2 2 0 0 1 4 0v6"/><path d="M13 11V3a2 2 0 0 1 4 0v8"/><path d="M5 11V7a2 2 0 0 1 4 0v4"/><path d="M17 11V8a2 2 0 0 1 4 0v6a7 7 0 0 1-7 7h-1a7 7 0 0 1-7-7v-3"/></svg>
+        </span>
+      </summary>
       <p>Escribinos a <a href="mailto:contacto@tedbeneitikva.org">contacto@tedbeneitikva.org</a> y lo averiguamos juntos. Sin vueltas.</p>
     </details>
 
     <details class="faq__item">
-      <summary>¿Hay selección?</summary>
+      <summary>
+        <span class="faq__q">¿Hay selección?</span>
+        <span class="faq__hand" aria-hidden="true">
+          <svg class="faq__hand-icon faq__hand-icon--closed" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 13v-2a2 2 0 1 1 4 0v2"/><path d="M11 13V9a2 2 0 1 1 4 0v4"/><path d="M15 13v-2a2 2 0 1 1 4 0v5a5 5 0 0 1-5 5h-2a5 5 0 0 1-5-5v-3a2 2 0 1 1 4 0"/></svg>
+          <svg class="faq__hand-icon faq__hand-icon--open" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11V5a2 2 0 0 1 4 0v6"/><path d="M13 11V3a2 2 0 0 1 4 0v8"/><path d="M5 11V7a2 2 0 0 1 4 0v4"/><path d="M17 11V8a2 2 0 0 1 4 0v6a7 7 0 0 1-7 7h-1a7 7 0 0 1-7-7v-3"/></svg>
+        </span>
+      </summary>
       <p>Sí. Buscamos compromiso, no perfección. Si tenés algo para decir y tiempo para dedicarle, tenés todas las chances.</p>
     </details>
 
     <details class="faq__item">
-      <summary>¿A qué edades apunta?</summary>
+      <summary>
+        <span class="faq__q">¿A qué edades apunta?</span>
+        <span class="faq__hand" aria-hidden="true">
+          <svg class="faq__hand-icon faq__hand-icon--closed" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 13v-2a2 2 0 1 1 4 0v2"/><path d="M11 13V9a2 2 0 1 1 4 0v4"/><path d="M15 13v-2a2 2 0 1 1 4 0v5a5 5 0 0 1-5 5h-2a5 5 0 0 1-5-5v-3a2 2 0 1 1 4 0"/></svg>
+          <svg class="faq__hand-icon faq__hand-icon--open" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11V5a2 2 0 0 1 4 0v6"/><path d="M13 11V3a2 2 0 0 1 4 0v8"/><path d="M5 11V7a2 2 0 0 1 4 0v4"/><path d="M17 11V8a2 2 0 0 1 4 0v6a7 7 0 0 1-7 7h-1a7 7 0 0 1-7-7v-3"/></svg>
+        </span>
+      </summary>
       <p>Adolescentes y jóvenes en edad de secundaria.</p>
     </details>
 
@@ -396,6 +349,7 @@
 <section class="cta" id="postulate">
 
   <div class="cta__circle" aria-hidden="true"></div>
+  <img class="cta__face" src="assets/photos/Foto4.png" alt="" aria-hidden="true" loading="lazy" />
 
   <p class="cta__kicker">— Cohorte 2026 · Cupos limitados</p>
 
@@ -412,50 +366,9 @@
   <p class="cta__micro">Tarda 3 minutos. Lo importante es que te animes.</p>
 </section>
 
-<!-- ────────────  PARTNERS / TRAÉ TED-ED  ──────────── -->
-<section class="partners" id="partners">
-
-  <div class="partners__inner">
-    <p class="partners__kicker">— Para escuelas y organizaciones</p>
-
-    <h2 class="partners__title">
-      Llevá Clubes TED‑Ed Benei&nbsp;Tikva<br />
-      <em>a tu escuela u organización.</em>
-    </h2>
-
-    <p class="partners__body">
-      Si dirigís una escuela, un movimiento juvenil o una organización comunitaria y querés
-      que tus jóvenes vivan esta experiencia, podemos coordinar una cohorte específica para ustedes.
-    </p>
-
-    <a href="https://forms.tedbeneitikva.org/partners" class="btn btn--outline" target="_blank" rel="noopener">
-      <span>Quiero traer TED‑Ed</span>
-      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="square"/></svg>
-    </a>
-
-    <p class="partners__note">
-      A futuro este espacio va a mostrar a las escuelas y organizaciones aliadas.
-    </p>
-  </div>
-</section>
-
-<!-- ────────────  INSTAGRAM  ──────────── -->
-<section class="ig">
-  <a href="https://www.instagram.com/beneitikva/" target="_blank" rel="noopener" class="ig__link">
-    <div class="ig__left">
-      <p class="ig__kicker">— Seguinos</p>
-      <h3>@beneitikva</h3>
-      <p class="ig__sub">El detrás de escena, en vivo.</p>
-    </div>
-    <div class="ig__arrow" aria-hidden="true">
-      <svg viewBox="0 0 60 60" width="60" height="60"><path d="M10 30h40M34 14l16 16-16 16" stroke="currentColor" stroke-width="2" fill="none"/></svg>
-    </div>
-  </a>
-</section>
-
 </main>
 
-<!-- ────────────  FOOTER  ──────────── -->
+<!-- ────────────  FOOTER (compacto, IG solo acá)  ──────────── -->
 <footer class="footer">
 
   <div class="footer__top">
@@ -470,9 +383,9 @@
 
     <nav class="footer__nav" aria-label="Footer">
       <a href="#postulate">Postulate</a>
-      <a href="#partners">Para escuelas</a>
-      <a href="https://www.instagram.com/beneitikva/" target="_blank" rel="noopener">Instagram</a>
+      <a href="#faq">FAQ</a>
       <a href="mailto:contacto@tedbeneitikva.org">Contacto</a>
+      <a href="https://www.instagram.com/beneitikva/" target="_blank" rel="noopener">@beneitikva</a>
     </nav>
   </div>
 
