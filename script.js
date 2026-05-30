@@ -1,7 +1,6 @@
 /* ============================================================
    CLUBES TED-ED BENEI TIKVA — choreography
    Stack: Lenis (smooth scroll) + GSAP + ScrollTrigger
-   Mobile-first
    ============================================================ */
 
 (function () {
@@ -11,7 +10,6 @@
   document.body.classList.remove("no-js");
 
   const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const isDesktop = () => window.innerWidth > 820;
 
   // ---------- Preloader ----------
   window.addEventListener("load", () => {
@@ -41,7 +39,7 @@
     }
   }
 
-  // ---------- NAV: scrolled state + burger ----------
+  // ---------- NAV: smooth anchor + scrolled state + burger ----------
   const nav = document.getElementById("nav");
   const burger = document.getElementById("navBurger");
   const drawer = document.getElementById("drawer");
@@ -93,17 +91,17 @@
   // HERO entry choreography
   // ========================================================
   if (!prefersReduced) {
-    const heroTl = gsap.timeline({ delay: 0.6 });
+    const heroTl = gsap.timeline({ delay: 0.7 });
     heroTl
       .to(".hero__circle", {
         scale: 1,
-        duration: 1.4,
+        duration: 1.6,
         ease: "expo.out",
       })
       .from(
         ".hero__eyebrow",
         { opacity: 0, y: 16, duration: 0.7, ease: "power3.out" },
-        "-=0.8"
+        "-=0.9"
       )
       .to(".hero__eyebrow", { opacity: 1, duration: 0.6 }, "<")
       .to(
@@ -128,56 +126,23 @@
     );
   }
 
-  // ========================================================
-  // HERO scroll effect:
-  //  Desktop: pin hero, circle grows from 1 → big while pinned
-  //  Mobile:  no pin (touch UX), circle grows during scroll-through
-  //  Both: CSS mix-blend-mode inverts red text → black inside circle
-  // ========================================================
+  // hero circle parallax on scroll
   if (ST && !prefersReduced) {
-    if (isDesktop()) {
-      gsap.timeline({
-        scrollTrigger: {
-          trigger: ".hero",
-          start: "top top",
-          end: "+=110%",
-          scrub: 0.6,
-          pin: true,
-          pinSpacing: true,
-          anticipatePin: 1,
-          invalidateOnRefresh: true,
-        },
-      }).to(".hero__circle", { scale: 4.5, ease: "none" }, 0)
-        .to(".hero__scroll", { opacity: 0, ease: "none", duration: 0.3 }, 0);
-    } else {
-      // mobile: no pin, just grow circle as user scrolls past hero
-      gsap.to(".hero__circle", {
-        scale: 3.2,
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".hero",
-          start: "top top",
-          end: "bottom top",
-          scrub: 0.5,
-          invalidateOnRefresh: true,
-        },
-      });
-      gsap.to(".hero__scroll", {
-        opacity: 0,
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".hero",
-          start: "top top",
-          end: "20% top",
-          scrub: true,
-        },
-      });
-    }
+    gsap.to(".hero__circle", {
+      yPercent: -25,
+      scale: 0.85,
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".hero",
+        start: "top top",
+        end: "bottom top",
+        scrub: true,
+      },
+    });
   }
 
   // ========================================================
-  // MANIFESTO — horizontal pin (desktop only, ≥821px)
-  //   Mobile: panels stack vertically (CSS), no JS pin
+  // MANIFESTO — horizontal pin
   // ========================================================
   if (ST && !prefersReduced && window.innerWidth > 820) {
     const track = document.querySelector(".manifesto__track");
@@ -222,26 +187,6 @@
         );
       });
     }
-  } else if (ST && !prefersReduced) {
-    // mobile: reveal each panel line on scroll
-    gsap.utils.toArray(".manifesto__panel").forEach((panel) => {
-      const line = panel.querySelector(".manifesto__line");
-      if (!line) return;
-      gsap.fromTo(
-        line,
-        { opacity: 0, y: 30 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.9,
-          ease: "expo.out",
-          scrollTrigger: {
-            trigger: panel,
-            start: "top 75%",
-          },
-        }
-      );
-    });
   }
 
   // ========================================================
@@ -270,17 +215,34 @@
   }
 
   // ========================================================
-  // IDENTITY — fade-in faces
+  // PARA QUIÉN — items
   // ========================================================
   if (ST && !prefersReduced) {
-    gsap.from(".identity__face, .identity__quote", {
+    gsap.from(".para-quien__item", {
       opacity: 0,
-      y: 24,
-      duration: 0.9,
+      y: 40,
+      duration: 0.8,
       ease: "expo.out",
-      stagger: 0.12,
+      stagger: 0.08,
       scrollTrigger: {
-        trigger: ".identity",
+        trigger: ".para-quien__list",
+        start: "top 80%",
+      },
+    });
+  }
+
+  // ========================================================
+  // LEARN — cards
+  // ========================================================
+  if (ST && !prefersReduced) {
+    gsap.from(".learn__card", {
+      opacity: 0,
+      y: 36,
+      duration: 0.7,
+      ease: "expo.out",
+      stagger: { amount: 0.6, from: "start" },
+      scrollTrigger: {
+        trigger: ".learn__grid",
         start: "top 80%",
       },
     });
@@ -325,11 +287,51 @@
         ease: "expo.out",
         scrollTrigger: {
           trigger: step,
-          start: "top 85%",
+          start: "top 80%",
           toggleActions: "play none none reverse",
         },
       });
     });
+  }
+
+  // ========================================================
+  // GALLERY — drag-to-scroll
+  // ========================================================
+  const strip = document.getElementById("galleryStrip");
+  if (strip) {
+    let isDown = false;
+    let startX = 0;
+    let scrollLeft = 0;
+
+    strip.addEventListener("mousedown", (e) => {
+      isDown = true;
+      strip.classList.add("is-dragging");
+      startX = e.pageX - strip.offsetLeft;
+      scrollLeft = strip.scrollLeft;
+    });
+    strip.addEventListener("mouseleave", () => (isDown = false));
+    strip.addEventListener("mouseup", () => (isDown = false));
+    strip.addEventListener("mousemove", (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - strip.offsetLeft;
+      const walk = (x - startX) * 1.4;
+      strip.scrollLeft = scrollLeft - walk;
+    });
+
+    if (ST && !prefersReduced) {
+      gsap.from(".gallery__item", {
+        opacity: 0,
+        y: 50,
+        duration: 0.7,
+        ease: "expo.out",
+        stagger: 0.07,
+        scrollTrigger: {
+          trigger: ".gallery__strip",
+          start: "top 80%",
+        },
+      });
+    }
   }
 
   // ========================================================
@@ -350,6 +352,7 @@
     const ctaTitle = document.querySelector(".cta__title");
     if (ctaTitle) {
       const text = ctaTitle.innerHTML;
+      // split by space but keep <br> and <em>
       const wrap = (html) =>
         html
           .replace(/<br\s*\/?>/gi, "|||BR|||")
@@ -377,15 +380,41 @@
     }
   }
 
+  // ========================================================
+  // PARTNERS reveal
+  // ========================================================
+  if (ST && !prefersReduced) {
+    gsap.from(".partners__inner > *", {
+      opacity: 0,
+      y: 28,
+      duration: 0.8,
+      ease: "expo.out",
+      stagger: 0.1,
+      scrollTrigger: {
+        trigger: ".partners",
+        start: "top 75%",
+      },
+    });
+  }
+
+  // ========================================================
+  // IG reveal
+  // ========================================================
+  if (ST && !prefersReduced) {
+    gsap.from(".ig__link", {
+      opacity: 0,
+      y: 30,
+      duration: 0.9,
+      ease: "expo.out",
+      scrollTrigger: {
+        trigger: ".ig",
+        start: "top 80%",
+      },
+    });
+  }
+
   // refresh ScrollTrigger after fonts load (avoids layout jumps)
   if (document.fonts && document.fonts.ready) {
     document.fonts.ready.then(() => ST && ST.refresh());
   }
-
-  // refresh on resize-induced layout changes
-  let resizeTimer;
-  window.addEventListener("resize", () => {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(() => ST && ST.refresh(), 200);
-  });
 })();
