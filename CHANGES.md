@@ -130,6 +130,64 @@ website/script.js       — coreografía GSAP/Lenis
 website/CHANGES.md      — este archivo (nuevo)
 ```
 
+---
+
+## 2026-05-29 — Pass 2: editorial cinema aesthetic
+
+Diseño distinctivo — alejarse del look "AI cookie-cutter cinematic dark".
+Dirección: **editorial cinema** (magazine + filmstrip). Tres movimientos:
+
+### Tipografía editorial — pareja de 3 fuentes
+
+- **Instrument Serif italic** (nueva): para todos los `<em>`. Reemplaza el
+  bold-italic sans rojo. Contraste editorial clásico: sans bold + serif
+  italic delicado. Da peso al énfasis sin recurrir al peso visual bruto.
+- **JetBrains Mono** (nueva): para kickers, índices de manifiesto, meta
+  del timeline, marca `Benei Tikva` del nav, line del footer. Mono =
+  tarjeta de índice / metadata editorial.
+- **Poppins** (existente): body / títulos / UI. Sin tocar.
+
+Vars: `--font-sans`, `--font-serif`, `--font-mono`.
+
+### Detalles de "film cinema grammar"
+
+- **Hero — corner brackets**: 4 L-marks rojos finos enmarcando el hero como
+  cuadro de cámara. Pseudo-frame de cine. (`.hero__frame`)
+- **Hero — coordinates micro** (`34.6°S — 58.4°W`) top-left mobile, mono.
+- **Hero — frame ID** (`SCENE 01 — 05`) top-right mobile, mono. Desktop
+  oculta ambos porque ya tiene `.hero__meta--tl/tr`.
+- **Manifesto — ghost numerals**: 1 / 2 / 3 gigantes en serif italic
+  detrás de cada panel, opacidad 0.06, alternando lados. Editorial / spread.
+- **Manifesto — sub "— acto i / ii / iii"**: anotación serif italic
+  bottom-left, replica de pie de página de capítulo.
+- **Identity — sprocket holes**: filas de círculos negros top + bottom
+  imitando agujeros de filmstrip 35mm. Hecho con `radial-gradient`
+  repetido (cero imágenes).
+- **Timeline rail — tick marks**: hashes horizontales cada ~96px en el
+  rail rojo. Filmstrip / regla.
+- **CTA em**: serif italic 1.08em — la frase clave levantada por contraste.
+
+### Por qué esto se aleja del "AI slop"
+
+- **No usa**: Inter, Space Grotesk, Roboto, Geist, Manrope (los obvios).
+- **Sí usa**: Instrument Serif (italic distintivo, casi caligráfico) +
+  JetBrains Mono (metadata) + Poppins (UI). Combinación poco vista en
+  landings TED-clone.
+- **Decoraciones contextuales**: corner brackets, sprocket holes, ghost
+  numerals, tick marks — todos refuerzan la metáfora cinema/manifiesto.
+  Ninguno es ornamento gratuito.
+- **El círculo + blend mode** sigue siendo el "memorable moment", ahora
+  apoyado por una grilla editorial cohesiva.
+
+### Archivos tocados (pass 2)
+
+```
+website/index.html  — agrega .hero__frame, .hero__coords, .hero__frame-id,
+                      .manifesto__ghost, .manifesto__sub; font link Google
+website/styles.css  — vars de fuentes, em editorial, secciones EDITORIAL
+                      DETAILS (frame, coords, ghost, sprockets, ticks)
+```
+
 ### Notas de QA
 
 - Probar pin del hero en iOS Safari (`100svh` debería evitar saltos de URL bar).

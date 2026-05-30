@@ -14,7 +14,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,700;0,800;0,900;1,400&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
 <link rel="stylesheet" href="styles.css" />
 </head>
@@ -60,6 +60,11 @@
 <!-- ────────────  ACT I · HERO  ──────────── -->
 <section class="hero" id="hero">
 
+  <!-- film-frame corner brackets -->
+  <div class="hero__frame" aria-hidden="true">
+    <span></span><span></span><span></span><span></span>
+  </div>
+
   <!-- ambient red circle: grows on scroll, mix-blend with text -->
   <div class="hero__circle" aria-hidden="true"></div>
 
@@ -67,6 +72,16 @@
   <div class="hero__faces" aria-hidden="true">
     <img class="hero__face hero__face--a" src="assets/photos/Foto3.png" alt="" loading="eager" />
     <img class="hero__face hero__face--b" src="assets/photos/Foto7.png" alt="" loading="eager" />
+  </div>
+
+  <!-- bottom-left coordinates micro -->
+  <div class="hero__coords" aria-hidden="true">
+    <span>34.6°S</span><span class="hero__coords-bar"></span><span>58.4°W</span>
+  </div>
+
+  <!-- bottom-right frame counter -->
+  <div class="hero__frame-id" aria-hidden="true">
+    <span>SCENE</span><strong>01</strong><span class="hero__frame-id-bar"></span><span>05</span>
   </div>
 
   <!-- vertical TED label, editorial detail (desktop only) -->
@@ -128,18 +143,24 @@
     <div class="manifesto__track">
 
       <div class="manifesto__panel" data-panel="0">
-        <p class="manifesto__index">01 / 03</p>
+        <span class="manifesto__ghost" aria-hidden="true">1</span>
+        <p class="manifesto__index">Nº 01 — Manifiesto</p>
         <h2 class="manifesto__line"><span>Una</span> <strong>idea.</strong></h2>
+        <p class="manifesto__sub" aria-hidden="true">— acto i</p>
       </div>
 
       <div class="manifesto__panel" data-panel="1">
-        <p class="manifesto__index">02 / 03</p>
+        <span class="manifesto__ghost" aria-hidden="true">2</span>
+        <p class="manifesto__index">Nº 02 — Manifiesto</p>
         <h2 class="manifesto__line">Puede empezar una <strong>conversación.</strong></h2>
+        <p class="manifesto__sub" aria-hidden="true">— acto ii</p>
       </div>
 
       <div class="manifesto__panel manifesto__panel--final" data-panel="2">
-        <p class="manifesto__index">03 / 03</p>
+        <span class="manifesto__ghost" aria-hidden="true">3</span>
+        <p class="manifesto__index">Nº 03 — Manifiesto</p>
         <h2 class="manifesto__line">Puede cambiar un <strong>aula.</strong></h2>
+        <p class="manifesto__sub" aria-hidden="true">— acto iii</p>
       </div>
 
     </div>
